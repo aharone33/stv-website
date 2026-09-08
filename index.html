@@ -7,6 +7,10 @@
   <title>STV - רואים את הקולות</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -15,130 +19,98 @@
       direction: rtl;
     }
 
-    header {
-      background: linear-gradient(135deg, #ffffff, #eef7f2);
-      text-align: center;
-      padding: 45px 20px 35px;
-    }
-
-    .logo {
-      font-size: 68px;
-      font-weight: bold;
-      margin: 0;
-      color: #081a33;
-    }
-
-    .logo span {
-      color: #00a34a;
-    }
-
-    h1 {
-      font-size: 38px;
-      margin: 18px 0 10px;
-    }
-
-    .subtitle {
-      font-size: 22px;
-      line-height: 1.6;
-      margin: 0 auto;
-      max-width: 750px;
-    }
-
-    .features {
-      max-width: 900px;
-      margin: 35px auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-
-    .feature {
+    /* התמונה הראשית */
+    .hero {
+      width: 100%;
       background: white;
-      border-radius: 16px;
-      padding: 22px;
       text-align: center;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-      font-size: 19px;
+    }
+
+    .hero img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    /* אזור מתחת לתמונה */
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 45px 20px;
+      text-align: center;
+    }
+
+    .content h1 {
+      font-size: 34px;
+      margin: 0 0 15px;
+    }
+
+    .content p {
+      font-size: 21px;
+      line-height: 1.7;
+      margin: 10px 0;
     }
 
     .trial {
-      background: #ffffff;
+      background: white;
       max-width: 650px;
-      margin: 40px auto;
-      padding: 30px;
+      margin: 35px auto;
+      padding: 30px 25px;
       border-radius: 18px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.10);
     }
 
     .trial h2 {
-      text-align: center;
       font-size: 30px;
       margin-top: 0;
-      color: #009846;
     }
 
-    label {
-      display: block;
-      font-weight: bold;
+    .trial strong {
+      color: #008f45;
+    }
+
+    .whatsapp {
+      display: inline-block;
       margin-top: 18px;
-      margin-bottom: 7px;
-    }
-
-    input, select {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 13px;
-      font-size: 18px;
-      border: 1px solid #bbb;
-      border-radius: 9px;
-      background: white;
-    }
-
-    button {
-      width: 100%;
-      border: none;
-      border-radius: 12px;
-      padding: 16px;
-      margin-top: 25px;
-      background: #00b944;
+      padding: 15px 30px;
+      background: #19b94b;
       color: white;
-      font-size: 22px;
+      text-decoration: none;
+      font-size: 21px;
       font-weight: bold;
-      cursor: pointer;
+      border-radius: 12px;
     }
 
-    button:hover {
-      background: #009d3b;
-    }
-
-    .small {
-      text-align: center;
-      margin-top: 14px;
-      color: #555;
-      font-size: 15px;
-    }
-
-    footer {
-      text-align: center;
-      background: #0d2238;
-      color: white;
-      padding: 25px 15px;
-      margin-top: 45px;
+    .contact {
+      margin-top: 25px;
+      font-size: 18px;
       line-height: 1.8;
     }
 
+    footer {
+      background: #063c5a;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 45px;
+    }
+
     @media (max-width: 600px) {
-      .logo {
-        font-size: 50px;
+      .content {
+        padding: 30px 15px;
       }
 
-      h1 {
-        font-size: 30px;
+      .content h1 {
+        font-size: 27px;
       }
 
-      .subtitle {
-        font-size: 19px;
+      .content p {
+        font-size: 18px;
+      }
+
+      .trial h2 {
+        font-size: 25px;
       }
     }
   </style>
@@ -146,119 +118,52 @@
 
 <body>
 
-<header>
-  <div class="logo">ST<span>V</span></div>
-
-  <h1>לראות את הקולות. להבין בכל מקום.</h1>
-
-  <p class="subtitle">
-    תמלול ותרגום בזמן אמת לאנשים חרשים וכבדי שמיעה.
-    פתרון פשוט ונוח לשיחות, נסיעות לחו"ל, פגישות, הרצאות ותוכן יומיומי.
-  </p>
-</header>
-
-<section class="features">
-
-  <div class="feature">
-    💬<br><br>
-    <strong>שיחה פנים אל פנים</strong><br>
-    קוראים את דברי האדם שמולכם בזמן אמת
+  <!-- התמונה שיצרת -->
+  <div class="hero">
+    <img src="דף הנחיתה.png" alt="STV - רואים את הקולות">
   </div>
 
-  <div class="feature">
-    ✈️<br><br>
-    <strong>נסיעות לחו"ל</strong><br>
-    תרגום בזמן אמת למגוון שפות
-  </div>
+  <!-- ממשיכים בגלילה -->
+  <main class="content">
 
-  <div class="feature">
-    👥<br><br>
-    <strong>פגישות ועבודה</strong><br>
-    קל יותר לעקוב ולהשתתף בשיחה
-  </div>
+    <h1>STV – לראות את הקולות</h1>
 
-  <div class="feature">
-    🎓<br><br>
-    <strong>הרצאות ולמידה</strong><br>
-    תמלול חי בזמן ההרצאה
-  </div>
+    <p>
+      תמלול ותרגום בזמן אמת לאנשים חרשים וכבדי שמיעה.
+    </p>
 
-</section>
+    <p>
+      מתאים לשיחות פנים אל פנים, נסיעות לחו״ל,
+      פגישות, עבודה, הרצאות וצפייה בטלוויזיה.
+    </p>
 
-<section class="trial">
+    <section class="trial">
 
-  <h2>רוצה לנסות STV?</h2>
+      <h2>רוצים לנסות את STV?</h2>
 
-  <p style="text-align:center; font-size:20px;">
-    ניסיון חינם למשך יומיים
-  </p>
+      <p>
+        קבלו <strong>ניסיון של יומיים</strong>
+        והתרשמו מהמערכת.
+      </p>
 
-  <label for="name">שם מלא</label>
-  <input id="name" type="text" placeholder="לדוגמה: דן כהן">
+      <a class="whatsapp"
+         href="https://wa.me/972587688555?text=שלום%2C%20אני%20מעוניין%20לנסות%20את%20STV">
+        הרשמה לניסיון ב-WhatsApp
+      </a>
 
-  <label for="phone">מספר טלפון</label>
-  <input id="phone" type="tel" placeholder="05X-XXXXXXX">
+      <div class="contact">
+        WhatsApp: 058-768-8555<br>
+        טלפון: 050-400-8282<br>
+        דוא״ל: infoeini33@gmail.com
+      </div>
 
-  <label for="interest">מה מעניין אותך ב-STV?</label>
+    </section>
 
-  <select id="interest">
-    <option value="תמלול בזמן אמת">תמלול בזמן אמת</option>
-    <option value="תרגום בנסיעות לחו״ל">תרגום בנסיעות לחו״ל</option>
-    <option value="תמלול ותרגום">תמלול ותרגום</option>
-    <option value="פגישות ועבודה">פגישות ועבודה</option>
-    <option value="הרצאות ולמידה">הרצאות ולמידה</option>
-  </select>
+  </main>
 
-  <button onclick="sendWhatsApp()">
-    המשך ל-WhatsApp
-  </button>
-
-  <div class="small">
-    מיועד לטלפוני Samsung עם Android 10 ומעלה
-  </div>
-
-</section>
-
-<footer>
-
-  <strong>STV - See The Voices | רואים את הקולות</strong><br>
-
-  WhatsApp: 058-768-8555<br>
-  טלפון: 050-400-8282<br>
-  דוא"ל: infoeini33@gmail.com
-
-</footer>
-
-<script>
-function sendWhatsApp() {
-
-  const name = document.getElementById("name").value.trim();
-  const phone = document.getElementById("phone").value.trim();
-  const interest = document.getElementById("interest").value;
-
-  if (name === "") {
-    alert("נא למלא שם מלא");
-    return;
-  }
-
-  if (phone === "") {
-    alert("נא למלא מספר טלפון");
-    return;
-  }
-
-  const message =
-    "שלום אהרון, שמי " + name + ".\n" +
-    "מספר הטלפון שלי: " + phone + "\n" +
-    "אני מתעניין ב-STV עבור: " + interest + ".\n" +
-    "אשמח לקבל ניסיון של יומיים.";
-
-  const whatsappUrl =
-    "https://wa.me/972587688555?text=" +
-    encodeURIComponent(message);
-
-  window.open(whatsappUrl, "_blank");
-}
-</script>
+  <footer>
+    STV – רואים את הקולות
+  </footer>
 
 </body>
 </html>
