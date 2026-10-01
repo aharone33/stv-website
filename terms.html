@@ -353,7 +353,7 @@ href="STV-V1.5.apk"
 הורדת STV לאנדרואיד
 <span class="download-arrow">⬅️</span>
 </a>
-<p style="font-size:20px; font-weight:bold; margin-top:20px;">
+<p id="afterDownload" style="display:none; font-size:20px; font-weight:bold; margin-top:20px;">
 📥 אחרי ההורדה:<br>
 גשו ל״הורדות״ במכשיר → מצאו את הקובץ STV-V1.5.apk → לחצו עליו להתקנה.
 </p>
@@ -371,7 +371,7 @@ STV – רואים את הקולות |
 <script>
 const checkbox = document.getElementById('acceptTerms');
 const downloadButton = document.getElementById('downloadButton');
-
+const afterDownload = document.getElementById('afterDownload');
 checkbox.addEventListener('change', function() {
   if (this.checked) {
     downloadButton.classList.add('active');
@@ -379,6 +379,9 @@ checkbox.addEventListener('change', function() {
   } else {
     downloadButton.classList.remove('active');
   }
+});
+  downloadButton.addEventListener('click', function() {
+    afterDownload.style.display = 'block';
 });
 </script>
 
