@@ -343,7 +343,8 @@ WhatsApp: 058-768-8555<br>
 </label>
 
 <br>
-
+  
+<div id="downloadArea" style="display:none;">
 <a id="downloadButton"
    class="download-button"
 href="STV-V1.5.apk"
@@ -370,12 +371,15 @@ STV – רואים את הקולות |
 <script>
 const checkbox = document.getElementById('acceptTerms');
 const downloadButton = document.getElementById('downloadButton');
+  const downloadArea = document.getElementById('downloadArea');
 
 checkbox.addEventListener('change', function() {
   if (this.checked) {
     downloadButton.classList.add('active');
+    downloadArea.style.display = 'none';
   } else {
     downloadButton.classList.remove('active');
+    downloadArea.style.display = 'none';
   }
 });
 </script>
