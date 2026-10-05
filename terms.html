@@ -371,17 +371,23 @@ STV – רואים את הקולות |
 const checkbox = document.getElementById('acceptTerms');
 const downloadButton = document.getElementById('downloadButton');
 const afterDownload = document.getElementById('afterDownload');
-checkbox.addEventListener('change', function() {
-  if (this.checked) {
-    downloadButton.classList.add('active');
-   
-  } else {
-    downloadButton.classList.remove('active');
-  }
-});
-  downloadButton.addEventListener('click', function() {
+
+function updateDownloadButton() {
+    if (checkbox.checked) {
+        downloadButton.classList.add('active');
+    } else {
+        downloadButton.classList.remove('active');
+    }
+}
+
+checkbox.addEventListener('click', updateDownloadButton);
+checkbox.addEventListener('change', updateDownloadButton);
+
+downloadButton.addEventListener('click', function() {
     afterDownload.style.display = 'block';
 });
+
+updateDownloadButton();
 </script>
 
 </body>
