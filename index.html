@@ -145,11 +145,31 @@
         font-size: 25px;
       }
     }
-  </style>
+.accessibility-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 11px;
+  background: white;
+  color: #10233d;
+  border: 1px solid #ccc;
+  border-radius: 8px;;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: bold;
+}
+      </style>
 </head>
-
 <body>
-
+<a href="accessibility.html" class="accessibility-link" aria-label="הצהרת נגישות">
+  <span>נגישות</span>
+  <span style="font-size:24px;">◉</span>
+</a>
+  
   <!-- התמונה שיצרת -->
   <div class="hero" style="position:relative;">
   <img src="דף הנחיתה.png" alt="STV - רואים את הקולות">
