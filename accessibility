@@ -1,0 +1,21 @@
+<script>
+let fontSize = 18;
+
+function changeSize(amount) {
+    fontSize += amount;
+    document.body.style.fontSize = fontSize + "px";
+}
+
+function toggleContrast() {
+    document.body.classList.toggle("high-contrast");
+}
+
+function resetAccessibility() {
+    fontSize = 18;
+    document.body.style.fontSize = "";
+    document.body.classList.remove("high-contrast");
+}
+</script>
+
+</body>
+</html>
