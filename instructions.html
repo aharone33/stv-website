@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>הוראות שימוש STV</title>
+<link rel="icon" type="image/webp" href="favicon.webp">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7f8;
+  color: #10233d;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 34px;
+}
+
+.languages {
+  margin: 25px 0;
+}
+
+.languages button {
+  background: #0066cc;
+  color: white;
+  border: 0;
+  padding: 12px 16px;
+  margin: 4px;
+  border-radius: 9px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.instructions {
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+  text-align: right;
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+.instructions h2 {
+  text-align: center;
+}
+
+.step {
+  margin: 14px 0;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 25px;
+  background: #19b94b;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📖 הוראות שימוש STV</h1>
+<p>בחרו שפה:</p>
+
+<div class="languages">
+<button onclick="showHebrew()">עברית</button>
+<button onclick="showEnglish()">English</button>
+<button onclick="showRussian()">Русский</button>
+<button onclick="showFrench()">Français</button>
+<button onclick="showSpanish()">Español</button>
+</div>
+
+<div class="instructions" id="instructions">
+
+<h2>איך מתחילים?</h2>
+
+<div class="step">1. פתחו את אפליקציית STV.</div>
+<div class="step">2. היכנסו להגדרות ובחרו את שפת הדיבור.</div>
+<div class="step">3. בחרו את השפה שבה תרצו לקרוא את התמלול או התרגום.</div>
+<div class="step">4. חזרו למסך הראשי ולחצו על <strong>„תמלול”</strong>.</div>
+<div class="step">5. התחילו לדבר. הטקסט יוצג על המסך בזמן אמת.</div>
+<div class="step">6. בסיום ניתן לעצור את התמלול ולצפות בתמלולים שנשמרו בהיסטוריה.</div>
+
+</div>
+
+<a class="back" href="index.html">חזרה לאתר STV</a>
+
+</div>
+
+<script>
+function setText(lang, title, steps, backText) {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "he" ? "rtl" : "ltr";
+
+  var box = document.getElementById("instructions");
+  box.style.textAlign = lang === "he" ? "right" : "left";
+
+  var html = "<h2>" + title + "</h2>";
+
+  for (var i = 0; i < steps.length; i++) {
+    html += '<div class="step">' + (i + 1) + ". " + steps[i] + "</div>";
+  }
+
+  box.innerHTML = html;
+  document.querySelector(".back").textContent = backText;
+}
+
+function showHebrew() {
+  setText("he", "איך מתחילים?", [
+    "פתחו את אפליקציית STV.",
+    "היכנסו להגדרות ובחרו את שפת הדיבור.",
+    "בחרו את השפה שבה תרצו לקרוא את התמלול או התרגום.",
+    'חזרו למסך הראשי ולחצו על <strong>„תמלול”</strong>.',
+    "התחילו לדבר. הטקסט יוצג על המסך בזמן אמת.",
+    "בסיום ניתן לעצור את התמלול ולצפות בתמלולים שנשמרו בהיסטוריה."
+  ], "חזרה לאתר STV");
+}
+
+function showEnglish() {
+  setText("en", "How to use STV", [
+    "Open the STV app.",
+    "Open Settings and select the spoken language.",
+    "Select the language in which you want to read the transcription or translation.",
+    'Return to the main screen and tap <strong>„תמלול” (Transcription)</strong>.',
+    "Start speaking. The text will appear on the screen in real time.",
+    "When finished, stop the transcription. Saved transcriptions can be viewed in History."
+  ], "Back to STV website");
+}
+
+function showRussian() {
+  setText("ru", "Как пользоваться STV", [
+    "Откройте приложение STV.",
+    "Откройте настройки и выберите язык речи.",
+    "Выберите язык, на котором хотите читать текст или перевод.",
+    'Вернитесь на главный экран и нажмите <strong>„תמלול”</strong>.',
+    "Начните говорить. Текст появится на экране в реальном времени.",
+    "После окончания остановите транскрипцию. Сохранённый текст можно посмотреть в истории."
+  ], "Вернуться на сайт STV");
+}
+
+function showFrench() {
+  setText("fr", "Comment utiliser STV", [
+    "Ouvrez l’application STV.",
+    "Ouvrez les paramètres et choisissez la langue parlée.",
+    "Choisissez la langue dans laquelle vous souhaitez lire la transcription ou la traduction.",
+    'Revenez à l’écran principal et appuyez sur <strong>„תמלול”</strong>.',
+    "Commencez à parler. Le texte apparaîtra à l’écran en temps réel.",
+    "Lorsque vous avez terminé, arrêtez la transcription. Les textes enregistrés sont disponibles dans l’historique."
+  ], "Retour au site STV");
+}
+
+function showSpanish() {
+  setText("es", "Cómo utilizar STV", [
+    "Abra la aplicación STV.",
+    "Abra Configuración y seleccione el idioma hablado.",
+    "Seleccione el idioma en el que desea leer la transcripción o la traducción.",
+    'Vuelva a la pantalla principal y pulse <strong>„תמלול”</strong>.',
+    "Empiece a hablar. El texto aparecerá en la pantalla en tiempo real.",
+    "Al terminar, detenga la transcripción. Puede consultar las transcripciones guardadas en el historial."
+  ], "Volver al sitio STV");
+}
+</script>
+
+</body>
+</html>
