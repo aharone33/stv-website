@@ -384,6 +384,10 @@ checkbox.addEventListener('change', updateDownloadButton);
 
 downloadButton.addEventListener('click', function() {
     afterDownload.style.display = 'block';
+
+    if (typeof gtag === 'function') {
+        gtag('event', 'stv_download');
+    }
 });
 
 updateDownloadButton();
