@@ -372,9 +372,13 @@ const downloadButton = document.getElementById('downloadButton');
 const afterDownload = document.getElementById('afterDownload');
 
 function updateDownloadButton() {
-    if (checkbox.checked) {
-        downloadButton.classList.add('active');
-    } else {
+  if (checkbox.checked) {
+    downloadButton.classList.add('active');
+
+    if (typeof gtag === 'function') {
+        gtag('event', 'stv_terms_accept');
+    }
+} else {
         downloadButton.classList.remove('active');
     }
 }
